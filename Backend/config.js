@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const userSchema = require("./models/User");
+const AdminSchema = require("./models/Admin");
 
 const connect = mongoose.connect('mongodb://localhost:27017/CBB')
 
@@ -11,3 +12,6 @@ else{
 }
 
 const user = mongoose.model("users",userSchema)
+const admin = mongoose.model("admins",AdminSchema)
+
+module.exports = { user, admin }

@@ -1,13 +1,13 @@
 
 // Homepage: Call to action, intro about donating blood
 
-import Navbar from "@/components/Navbar";
+import UserNavbar from "@/components/UserNavbar";
 import { Link } from "react-router-dom";
 
 export default function Index() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-[#fff6f7] to-[#ffe7ea]">
-      <Navbar />
+      <UserNavbar />
       <div className="container mx-auto max-w-2xl flex flex-col items-center justify-center py-24">
         <h1 className="font-extrabold text-4xl md:text-5xl mb-2 text-[#ea384c]">
           Give Blood, Save Lives

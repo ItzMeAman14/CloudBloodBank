@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const userSchema = mongoose.Schema({
+const AdminSchema = mongoose.Schema({
     name:String,
     email:String,
     availableBloodGroup:{
@@ -14,4 +14,4 @@ const userSchema = mongoose.Schema({
     Address:String
 })
 
-module.exports = userSchema
+module.exports = AdminSchema

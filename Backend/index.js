@@ -1,9 +1,14 @@
 const express = require('express');
 const db = require('./config');
+const AdminRouter = require('./routes/Admin');
 const app = express();
+const cors = require("cors")
+const PORT = 6548;
 
-const PORT = 3000;
+app.use(cors())
 
+// Routes
+app.use("/",AdminRouter);
 
 app.get('/', (req, res) => {
   

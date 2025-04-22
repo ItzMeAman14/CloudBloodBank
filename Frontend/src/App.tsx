@@ -11,6 +11,8 @@ import RegisterDonor from "./pages/RegisterDonor";
 import RegisterBloodBank from "./pages/RegisterBloodBank";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import DonateBlood from "./pages/DonateBlood";
+import FindBlood from "./pages/FindBlood";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/register/bloodbank" element={<RegisterBloodBank />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/donate-blood" element={<DonateBlood />} />
+          <Route path="/find-blood" element={<FindBlood />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
