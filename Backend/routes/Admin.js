@@ -12,4 +12,21 @@ AdminRouter.get("/getAdminData",async(req,res) => {
     }
 })
 
+
+AdminRouter.post("/getNeededHospitals",async(req,res) => {
+    try{
+        const allHospitals = await admin.find({})
+
+        const needyHospitals = allHospitals.filter((hos) => {
+            return hos.availableBloodGroup.includes(req.body.BloodType)
+        })
+
+        res.json(needyHospitals)
+    }
+    catch(err){
+        console.log(err);
+        res.status(500).json({message:"Internal Server Error"})
+    }
+})
+
 module.exports = AdminRouter

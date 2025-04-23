@@ -6,7 +6,7 @@ const cors = require("cors")
 const PORT = 6548;
 
 app.use(cors())
-
+app.use(express.json())
 // Routes
 app.use("/",AdminRouter);
 

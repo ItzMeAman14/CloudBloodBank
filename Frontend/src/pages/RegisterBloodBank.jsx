@@ -1,25 +1,26 @@
-
 import Navbar from "@/components/Navbar";
 import { useState } from "react";
 
 const initial = {
-  bankName: "",
+  name: "",
   contactPerson: "",
   email: "",
   password: "",
   phone: "",
   city: "",
   address: "",
+  type: "",
+  licenseNo:""
 };
 
 export default function RegisterBloodBank() {
   const [form, setForm] = useState(initial);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     alert(
       "Blood Bank Registered!\n" + JSON.stringify(form, null, 2)
@@ -43,11 +44,11 @@ export default function RegisterBloodBank() {
                 Blood Bank Name
               </label>
               <input
-                name="bankName"
+                name="name"
                 type="text"
                 required
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-[#ea384c] focus:border-[#ea384c]"
-                value={form.bankName}
+                value={form.name}
                 onChange={handleChange}
               />
             </div>
@@ -94,6 +95,20 @@ export default function RegisterBloodBank() {
             </div>
             <div>
               <label className="block mb-1 font-medium text-gray-700">
+                License Number
+              </label>
+              <input
+                name="licenseNo"
+                type="text"
+                required
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-[#ea384c] focus:border-[#ea384c]"
+                value={form.licenseNo}
+                onChange={handleChange}
+                maxLength={12}
+              />
+            </div>
+            <div>
+              <label className="block mb-1 font-medium text-gray-700">
                 Phone
               </label>
               <input
@@ -119,6 +134,21 @@ export default function RegisterBloodBank() {
                 onChange={handleChange}
               />
             </div>
+
+            <div>
+              <label className="block mb-1 font-medium text-gray-700">
+                Type
+              </label>
+              
+              <select className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-[#ea384c] focus:border-[#ea384c]" onChange={handleChange} name="type">
+                <option value={""}>Select Hospital Type</option>
+                <option value={"Government"}>Government</option>
+                <option value={"Private"}>Private</option>
+                <option value={"NGO"}>NGO</option>
+              </select>
+
+            </div>
+
             <div className="md:col-span-2">
               <label className="block mb-1 font-medium text-gray-700">
                 Address
